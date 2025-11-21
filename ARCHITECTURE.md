@@ -9,6 +9,26 @@ Kivabi is a modern fullstack application for project management and notes organi
 
 ## Technical Architecture
 
+### Technology Selection Rationale
+
+#### Why React.js for Frontend?
+- **Component-Based Architecture**: Enables reusable UI components for consistent user experience
+- **Strong Ecosystem**: Vast library ecosystem and community support for rapid development
+- **Performance**: Virtual DOM ensures efficient rendering and optimal performance
+- **Developer Experience**: Hot reloading with Vite provides excellent development workflow
+- **Job Market Demand**: High industry adoption with abundant talent pool
+- **Progressive Enhancement**: Can start simple and scale to complex SPA requirements
+
+#### Why Spring Boot with Java for Backend?
+- **Enterprise Readiness**: Battle-tested framework for production-grade applications
+- **Strong Typing**: Java's static typing reduces runtime errors and improves code quality
+- **Spring Ecosystem**: Comprehensive suite of tools (Security, Data, Boot) for full-stack development
+- **Performance**: JVM optimization and Just-In-Time compilation for high performance
+- **Security**: Built-in security features with Spring Security and proven authentication patterns
+- **Scalability**: Excellent support for microservices and horizontal scaling patterns
+- **Long-term Stability**: Backward compatibility and long-term support from Oracle/Spring
+- **Database Integration**: Superior ORM with Spring Data JPA and transaction management
+
 ### Backend (kivabi-service)
 - **Framework**: Spring Boot 3.5.7
 - **Database**: PostgreSQL
