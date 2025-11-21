@@ -49,23 +49,13 @@ noteRepository.save(note);
 
 ## 4. Provider Comparison
 
-  ------------------------------------------------------------------------
-  Provider             Pros           Cons          Best For
-  -------------------- -------------- ------------- ----------------------
-  OpenAI Whisper       Best accuracy, Requires      Most use cases
-                       multilingual   upload        
-
-  Google STT           Strong         Higher cost   Enterprise
-                       accuracy                     
-
-  AWS Transcribe       Good streaming AWS           AWS users
-                                      complexity    
-
-  Azure STT            Enterprise     Expensive     Enterprise
-
-  Vosk Offline         No internet    Lower         On-device
-                                      accuracy      
-  ------------------------------------------------------------------------
+| Provider | Pros | Cons | Best For |
+|----------|------|------|----------|
+| OpenAI Whisper | Best accuracy, multilingual | Requires upload | Most use cases |
+| Google STT | Strong accuracy | Higher cost | Enterprise |
+| AWS Transcribe | Good streaming | AWS complexity | AWS users |
+| Azure STT | Enterprise features | Expensive | Enterprise |
+| Vosk Offline | No internet required | Lower accuracy | On-device |
 
 ## 5. Architecture
 
