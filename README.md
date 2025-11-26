@@ -36,5 +36,6 @@ Kivabi MPV/
 
 ## Links
 
-- [Architecture Diagram](#)
-- [Detailed Installation Guide](#)
+- [Architecture Diagram](./architecture.png)
+- [Audio to Text Feature Documentation](./audio-to-text.md)
+- [Detailed Installation Guide](./installation.md)
