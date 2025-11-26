@@ -5,7 +5,7 @@ Kivabi is a modern fullstack application for project management and notes organi
 
 ## High Level Architecture
 
-[High Level Architecture](./High%20Level%20Architecture.png)
+![High Level Architecture](./High%20Level%20Architecture.png)
 
 ## Technical Architecture
 
