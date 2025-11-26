@@ -21,7 +21,7 @@ function Register() {
     setLoading(true)
     setResult(null)
     try {
-      const res = await fetch('http://localhost:8080/api/auth/register', {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081/api'}/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
@@ -39,7 +39,7 @@ function Register() {
       <h2>Register</h2>
       <form className="register-form" onSubmit={handleSubmit}>
         <div>
-          <label>Nama</label><br />
+          <label>Name</label><br />
           <input name="name" value={form.name} onChange={handleChange} required />
         </div>
         <div>
@@ -68,7 +68,7 @@ function Register() {
       )}
       <div style={{ marginTop: 24, textAlign: 'center' }}>
         <Link to="/login" style={{ color: '#646cff', textDecoration: 'underline' }}>
-          Sudah punya akun? Login di sini
+          Already have an account? Login here
         </Link>
       </div>
     </div>

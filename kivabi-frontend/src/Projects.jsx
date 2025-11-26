@@ -20,7 +20,7 @@ function Projects() {
     setError(null)
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch('http://localhost:8080/api/projects', {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081/api'}/projects`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -48,7 +48,7 @@ function Projects() {
     setCreateMsg(null)
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch('http://localhost:8080/api/projects', {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081/api'}/projects`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

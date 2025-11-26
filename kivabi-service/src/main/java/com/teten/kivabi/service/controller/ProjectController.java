@@ -15,15 +15,17 @@ public class ProjectController {
   private final ProjectService projectService;
 
   @PostMapping
-  public ResponseEntity<ApiResponse<Project>> createProject(@RequestBody Project project) {
-    Project created = projectService.createProject(project);
+  public ResponseEntity<ApiResponse<Project>> createProject(
+      @RequestBody Project project, @RequestHeader("Authorization") String token) {
+    Project created = projectService.createProject(project, token);
     ApiResponse<Project> response = new ApiResponse<>(true, "Project berhasil dibuat", created);
     return ResponseEntity.status(HttpStatus.CREATED).body(response);
   }
 
   @GetMapping
-  public ResponseEntity<ApiResponse<List<Project>>> getAllProjects() {
-    List<Project> projects = projectService.getAllProjects();
+  public ResponseEntity<ApiResponse<List<Project>>> getAllProjects(
+      @RequestHeader("Authorization") String token) {
+    List<Project> projects = projectService.getAllProjects(token);
     ApiResponse<List<Project>> response = new ApiResponse<>(true, "List project", projects);
     return ResponseEntity.ok(response);
   }

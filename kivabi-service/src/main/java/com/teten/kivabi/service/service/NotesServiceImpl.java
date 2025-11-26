@@ -16,7 +16,7 @@ public class NotesServiceImpl implements NotesService {
 
   @Override
   public List<Notes> getNotesByProjectId(Long projectId) {
-    Project project = projectRepository.findById(projectId).orElse(null);
+    Project project = projectRepository.findById(projectId).orElseThrow(() -> new RuntimeException("Project not found"));
     if (project == null) return java.util.Collections.emptyList();
     return notesRepository.findAll().stream()
         .filter(note -> note.getProject() != null && note.getProject().getId().equals(projectId))
@@ -25,7 +25,7 @@ public class NotesServiceImpl implements NotesService {
 
   @Override
   public Notes createNote(Long projectId, String content) {
-    Project project = projectRepository.findById(projectId).orElse(null);
+    Project project = projectRepository.findById(projectId).orElseThrow(() -> new RuntimeException("Project not found"));
     if (project == null) return null;
     Notes note = new Notes(content, project);
     return notesRepository.save(note);

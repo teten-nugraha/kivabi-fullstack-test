@@ -20,7 +20,7 @@ function Login() {
     setLoading(true)
     setResult(null)
     try {
-      const res = await fetch('http://localhost:8080/api/auth/login', {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081/api'}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)
@@ -59,7 +59,7 @@ function Login() {
         </button>
       </form>
       <div className="register-link">
-        Belum punya akun? <Link to="/register">Daftar di sini</Link>
+        Dont have Account? <Link to="/register">Register here</Link>
       </div>
       {result && (
         <div className={`register-message ${result.success ? 'success' : 'error'}`}>

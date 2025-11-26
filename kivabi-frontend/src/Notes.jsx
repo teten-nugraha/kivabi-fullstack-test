@@ -21,7 +21,7 @@ function Notes() {
     setError(null)
     const token = localStorage.getItem('token')
     try {
-      const res = await fetch(`http://localhost:8080/api/notes?projectId=${projectId}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081/api'}/notes?projectId=${projectId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -66,7 +66,7 @@ function Notes() {
         setCreateMsg(null)
         const token = localStorage.getItem('token')
         try {
-          const res = await fetch(`http://localhost:8080/api/notes?projectId=${projectId}`, {
+          const res = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:8081/api'}/notes?projectId=${projectId}`, {
             method: 'POST',
             headers: {
               'Authorization': `Bearer ${token}`,
@@ -93,14 +93,14 @@ function Notes() {
       }}>
         <input
           type="text"
-          placeholder="Tulis catatan baru"
+          placeholder="Write a new note"
           value={newNote}
           onChange={e => setNewNote(e.target.value)}
           disabled={creating}
         />
         <button type="submit" disabled={creating || !newNote.trim()}>
           <span role="img" aria-label="plus">➕</span>
-          {creating ? 'Membuat...' : 'Tambah Note'}
+          {creating ? 'Creating...' : 'Add Note'}
         </button>
       </form>
       {createMsg && (
